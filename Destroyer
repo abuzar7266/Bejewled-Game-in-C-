@@ -1,0 +1,98 @@
+bool Findid(int *& SingleCol,int &Size,int Type)
+	{
+			int count = 0;
+			int *Ids = NULL;
+			for(int i=0;i<8;i++)
+			{
+				if(SingleCol[i]==Type)
+				{
+					for(int j=i;j<8;j++)
+					{
+						if(SingleCol[j]==Type)
+						{
+							count++;
+						}
+					}
+					if(count>=3)
+					{
+						if(Ids==NULL)
+						{
+							Ids = new int[count];
+							Size = count;
+						}
+						int x = 0;
+						for(int k=i;k<8;k++)
+						{
+							if(x<count && SingleCol[k]==Type)
+							Ids[x] = SingleCol[k];
+						}
+					return true;
+					}
+				}
+			}
+		return ;
+	}
+	bool RightSearch(Shape *Data[8][8],int *&Idx,int *&Idy,int &Size,int ix,int jy,int Type)
+	{
+
+			int *SingleCol;
+			int *SingleRow;
+			SingleCol = new int[8];
+			SingleRow = new int[8];
+			cout<<"Type To Search : "<<Type<<endl;
+			for(int i=0;i<8;i++)
+			{
+				SingleCol[i] = Data[ix][i]->getGemType();
+				SingleRow[i] = Data[i][jy]->getGemType();
+			}
+			cout<<"Types Stores"<<endl;
+			for(int i=0;i<8;i++)
+			{
+				cout<<" "<<SingleRow[i];
+			}
+			cout<<endl;
+			for(int i=0;i<8;i++)
+			{
+				cout<<" "<<SingleCol[i];
+			}
+			int Size1 = 0;
+			int Size2 = 0;
+			bool a = Findid(SingleCol,Size1,Type);
+			cout<<"A Done"<<endl;
+			bool b = Findid(SingleRow,Size2,Type);
+			cout<<" First "<<endl;
+				for(int i=0;i<Size1;i++)
+				{
+					cout<<SingleCol[i]<<endl;
+				}
+			cout<<" Second "<<endl;
+				for(int i=0;i<Size2;i++)
+				{
+					cout<<SingleRow[i]<<endl;
+				}
+				Idx = new int[Size1+Size2];
+				Idy = new int[Size1+Size2];
+				Size = Size1+Size2;
+			cout<<"Done"<<endl;
+				for(int i=0;i<Size1;i++)
+				{
+						Idx[i] = SingleCol[i];
+						Idy[i] = jy;
+				}
+				int x = 0;
+				for(int i = Size1 ;i<Size1+Size2;i++)
+				{
+						Idy[i] = SingleRow[x];
+						Idx[i] = ix;
+						x++;
+				}
+			cout<<"Size : "<<Size1+Size2<<endl;
+			for(int i=0;i<Size1+Size2;i++)
+				{
+					cout<<"-->"<<Idx[i]<<" "<<Idy[i]<<endl;
+				}
+			cout<<"Done"<<endl;
+			delete []SingleRow;
+			delete []SingleCol;
+			return a || b;
+	}

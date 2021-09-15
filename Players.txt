@@ -1,0 +1,42 @@
+---------------------
+Player Name  : abuzar
+Player Level : 1
+Player Score : 0
+---------------------
+Player Name  : abid
+Player Level : 56
+Player Score : 325521
+---------------------
+Player Name  : Skinhi
+Player Level : 2
+Player Score : 325
+---------------------
+Player Name  : albert einstein
+Player Level : 3
+Player Score : 567
+---------------------
+Player Name  : william spark
+Player Level : 7
+Player Score : 2567
+---------------------
+Player Name  : elbert anderson
+Player Level : 13
+Player Score : 3760
+---------------------
+Player Name  : farhan yasir
+Player Level : 112
+Player Score : 32567626
+---------------------
+Player Name  : mohiz ali
+Player Level : 87
+Player Score : 3200067
+---------------------
+Player Name  : ali zar
+Player Level : 97
+Player Score : 3005671
+---------------------
+Player Name  : ali qumail
+Player Level : 11
+Player Score : 32567
+---------------------------
+Player Name  : llll
